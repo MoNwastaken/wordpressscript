@@ -1,11 +1,10 @@
 #!/bin/bash
 apt-get install tasksel
 tasksel install lamp-server
-mysql -u root -p
+mysql -u root -p -Bse "
 CREATE DATABASE wordpressdb;
 CREATE USER wordpressuser@localhost IDENTIFIED BY 'wordpresspassword';
-GRANT ALL PRIVILEGES ON wordpressdb.* TO wordpressuser@localhost; FLUSH PRIVILEGES;
-exit
+GRANT ALL PRIVILEGES ON wordpressdb.* TO wordpressuser@localhost; FLUSH PRIVILEGES;"
 cd /tmp
 wget http://wordpress.org/latest.zip
 apt-get install unzip
