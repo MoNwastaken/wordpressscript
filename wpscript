@@ -16,3 +16,4 @@ mkdir -p /var/www/html/wordpress/wp-content/uploads
 chown -R www-data:www-data /var/www/html/wordpress/wp-content/uploads 
 service apache2 restart
 apt-get install php7.0-mysql
+ifconfig
